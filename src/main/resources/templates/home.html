@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
   <title>Homepage</title>
@@ -9,7 +9,10 @@
 
 <section class="content">
   <div class="welcome-msg">
-    <p th:if="${username != null}">Welcome <span th:text="${username}"></span>! Here is a joke to make your day better:</p>
+    <div class="logged-welcome" th:if="${username != null}">
+      <p>Welcome <span th:text="${username}"></span>!</p>
+      <p>Here is a joke to make your day better:</p>
+    </div>
     <p th:if="${username == null}">Log in to get a joke!</p>
   </div>
   <div class="joke">

@@ -1,0 +1,21 @@
+/* background color: Peach      #EEA47F */
+/* other color:      Royal Blue #00539C */
+
+html{
+  background-color: #EEA47F;
+  color: #00539C;
+  font-weight: bolder;
+}
+
+.content{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-top: 10%;
+  font-size: larger;
+}
+
+.logged-welcome p{
+  margin-top: 0;
+  margin-bottom: 0;
+}
