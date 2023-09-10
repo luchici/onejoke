@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+<head>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+  <title>Homepage</title>
+</head>
+<body>
+
+<section class="content">
+  <div class="welcome-msg">
+    <p th:if="${username != null}">Welcome <span th:text="${username}"></span>! Here is a joke to make your day better:</p>
+    <p th:if="${username == null}">Log in to get a joke!</p>
+  </div>
+  <div class="joke">
+    <p th:if="${joke} != null" th:text="${joke}"></p>
+    <p th:if="${joke} == null">No joke for you yet!</p>
+  </div>
+</section>
+</body>
+</html>
