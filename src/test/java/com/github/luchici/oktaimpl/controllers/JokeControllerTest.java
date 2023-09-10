@@ -11,16 +11,15 @@ import org.springframework.test.web.servlet.MockMvc;
 @WebMvcTest(JokeController.class)
 public class JokeControllerTest {
 
-    private final String rootURL = "/jokes";
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void getJoke_ReturnsJokeAsString() throws Exception {
+    void getHome_ReturnsHomeView() throws Exception {
         // Given
-        String expectedViewName = "joke";
+        String expectedViewName = "home";
         // When
-        mockMvc.perform(get(rootURL + "/just-one"))
+        mockMvc.perform(get("/"))
         // Then
                     .andExpect(
                         view().name(expectedViewName));
