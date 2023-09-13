@@ -1,4 +1,4 @@
-package com.github.luchici.oktaimpl;
+package com.github.luchici.onejoke;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootTest
-class OktaimplApplicationTests {
+class OneJokeApplicationTests {
 
     @Test
     void contextLoads(WebApplicationContext context) {

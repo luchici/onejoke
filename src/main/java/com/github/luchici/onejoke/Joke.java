@@ -1,4 +1,4 @@
-package com.github.luchici.oktaimpl;
+package com.github.luchici.onejoke;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

@@ -1,11 +1,11 @@
-package com.github.luchici.oktaimpl.services;
+package com.github.luchici.onejoke.services;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.github.luchici.oktaimpl.Joke;
-import com.github.luchici.oktaimpl.clients.JokeClient;
+import com.github.luchici.onejoke.Joke;
+import com.github.luchici.onejoke.clients.JokeClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

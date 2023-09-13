@@ -1,9 +1,9 @@
-package com.github.luchici.oktaimpl.controllers;
+package com.github.luchici.onejoke.controllers;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-import com.github.luchici.oktaimpl.services.JokeService;
+import com.github.luchici.onejoke.services.JokeService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

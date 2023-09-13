@@ -1,7 +1,7 @@
-package com.github.luchici.oktaimpl.services;
+package com.github.luchici.onejoke.services;
 
-import com.github.luchici.oktaimpl.Joke;
-import com.github.luchici.oktaimpl.clients.JokeClient;
+import com.github.luchici.onejoke.Joke;
+import com.github.luchici.onejoke.clients.JokeClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

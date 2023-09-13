@@ -1,4 +1,4 @@
-package com.github.luchici.oktaimpl.clients;
+package com.github.luchici.onejoke.clients;
 
 import feign.Logger;
 import org.springframework.context.annotation.Bean;
