@@ -1,6 +1,6 @@
-package com.github.luchici.oktaimpl.controllers;
+package com.github.luchici.onejoke.controllers;
 
-import com.github.luchici.oktaimpl.services.JokeService;
+import com.github.luchici.onejoke.services.JokeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
