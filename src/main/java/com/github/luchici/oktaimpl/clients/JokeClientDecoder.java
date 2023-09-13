@@ -1,7 +1,8 @@
-package com.github.luchici.oktaimpl;
+package com.github.luchici.oktaimpl.clients;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.luchici.oktaimpl.Joke;
 import feign.Response;
 import feign.codec.Decoder;
 import java.io.BufferedReader;
@@ -23,7 +24,7 @@ public class JokeClientDecoder implements Decoder {
         String body = new BufferedReader(
                             new InputStreamReader(response.body().asInputStream(), StandardCharsets.UTF_8))
                         .readLine();
-        List<Joke> jokes = objectMapper.readValue(body, new TypeReference<List<Joke>>() {});
+        List<Joke> jokes = objectMapper.readValue(body, new TypeReference<>() {});
         return jokes.get(0);
     }
 }
