@@ -2,6 +2,8 @@
 
 html{
   background-color: #fcede5;
+  font-size: 1.5rem;
+  font-family: Indie Flower;
 }
 
 body{
@@ -11,6 +13,30 @@ body{
   margin: 0;
   padding: 0;
 }
+
+.navbar{
+  margin-top: 1rem;
+}
+
+.navbar-text-container{
+  display: flex;
+  align-items: center;
+}
+
+.navbar-text{
+  margin: 0;
+}
+
+.navbar-list-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+  width: 75%;
+  margin: auto;
+
+}
+
 .footer{
   margin-top: auto;
   display: flex;
