@@ -4,15 +4,22 @@
       lang="en">
 <head>
   <meta charset="UTF-8">
-  <title layout:title-pattern="$CONTENT_TITLE">Base Layout</title>
+  <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">OneJoke</title>
   <link rel="stylesheet" th:href="@{/css/base-layout.css}">
   <link rel="stylesheet" th:href="@{/css/fragments.css}">
-
 </head>
 <body>
 
 <section layout:fragment="content"></section>
 
-
+<footer class="footer">
+  <p class="footer-text">Made by Bogdan Luchici</p>
+  <ul class="footer-list-container">
+    <li th:replace="~{fragments::footer-social-link(svg='github',link='https://github.com/luchici/onejoke')}"></li>
+    <li th:replace="~{fragments::footer-social-link(svg='whatsapp',link='wa.link/kb7561')}"></li>
+    <li th:replace="~{fragments::footer-social-link(svg='linkedin',link='https://www.linkedin.com/in/luchici/')}"></li>
+    <li th:replace="~{fragments::footer-social-link(svg='email',link='mailto:luchici123@gmail.com')}"></li>
+  </ul>
+</footer>
 </body>
 </html>

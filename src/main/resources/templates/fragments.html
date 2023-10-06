@@ -1,0 +1,5 @@
+<li th:fragment="footer-social-link(svg,link)" class="footer-social-li">
+  <a th:href="${link}" class="footer-social-link">
+    <svg th:replace="~{${svg}}" class="footer-social-svg"></svg>
+  </a>
+</li>

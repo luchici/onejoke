@@ -1,9 +1,35 @@
-/* background color: Peach      #EEA47F */
-/* other color:      Royal Blue #00539C */
+/* background color:            #fcede5 */
 
 html{
-  /*background-color: #EEA47F;*/
-  background-color: red;
-  /*color: #00539C;*/
-  /*font-weight: bolder;*/
+  background-color: #fcede5;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.footer{
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text{
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.footer-list-container{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 2vh;
 }

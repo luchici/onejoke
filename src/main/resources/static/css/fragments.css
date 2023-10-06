@@ -1,0 +1,22 @@
+.footer-social-li {
+  padding-left: 0.5rem;
+}
+
+.footer-social-link {
+  display:inline-block;
+}
+
+.footer-social-link:link {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-social-link:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-social-svg {
+  box-shadow: 1px 5px 5px black;
+  width:80%;
+}
