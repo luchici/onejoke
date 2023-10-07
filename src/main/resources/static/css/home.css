@@ -1,21 +1,44 @@
-/* background color: Peach      #EEA47F */
-/* other color:      Royal Blue #00539C */
-
-html{
-  background-color: #EEA47F;
-  color: #00539C;
-  font-weight: bolder;
-}
-
 .content{
   width: 60%;
   margin: auto;
   text-align: center;
-  margin-top: 10%;
-  font-size: larger;
+  font-size: 1.5rem;
 }
 
-.logged-welcome p{
-  margin-top: 0;
-  margin-bottom: 0;
+.content-welcome-msg{
+  margin-bottom: 0.8rem;
+}
+
+.content-container-joke{
+  display: flex;
+  justify-content: center;
+}
+
+#button-bookmark{
+  align-self: center;
+  margin-right: 1rem;
+
+  background: none;
+  padding: 0;
+  font: inherit;
+  border: none;
+
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+#button-bookmark:hover {
+  transform: scale(1.2);
+}
+
+
+#button-bookmark:visited {
+
+}
+
+#button-bookmark:after {
+
+}
+
+.content-joke{
+  margin-top: 0.8rem;
 }

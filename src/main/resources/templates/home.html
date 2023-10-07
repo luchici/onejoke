@@ -2,26 +2,27 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{base-layout.html}"
->
+      layout:decorate="~{base-layout.html}">
 <head>
   <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
   <title>Home</title>
 </head>
 <body>
+<section layout:fragment="content" class="content">
 
-<section class="content">
-  <div class="welcome-msg">
-    <div class="logged-welcome" th:if="${username != null}">
-      <p>Welcome <span th:text="${username}"></span>!</p>
-      <p>Here is a joke to make your day better:</p>
+  <p class="content-no-joke" th:if="${username == null}">Log in to get a joke!</p>
+  <div class="content-text-joke" th:if="${username != null}">
+    <p class="content-welcome-msg">Here is a joke to make your day better:</p>
+    <div class="content-container-joke">
+      <button th:if="${jokeWasSaved == null}" th:insert="~{star}" id="button-bookmark"></button>
+      <p class="content-joke" th:if="${joke} != null" th:text="${joke}"></p>
     </div>
-    <p th:if="${username == null}">Log in to get a joke!</p>
+    <div class="content-buttons">
+      <button class="button" id="content-button-new-joke">New Joke</button>
+      <button class="button" id="content-button-tell-joke">Tell me a joke</button>
+    </div>
   </div>
-  <div class="joke">
-    <p th:if="${joke} != null" th:text="${joke}"></p>
-    <p th:if="${joke} == null">No joke for you yet!</p>
-  </div>
+
 </section>
 </body>
 </html>
