@@ -1,5 +1,5 @@
 .navbar-element{
- margin: 0;
+  margin: 0;
 }
 
 .button{
@@ -31,8 +31,8 @@
   width: auto;
 }
 
-.navbar-button:hover,
-.navbar-button:focus {
+.button:hover,
+.button:focus {
   background-color: #fb8332;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
@@ -46,7 +46,6 @@
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
-
 
 .footer-social-li {
   padding-left: 0.5rem;
