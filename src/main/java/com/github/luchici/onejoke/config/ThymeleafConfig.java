@@ -1,4 +1,4 @@
-package com.github.luchici.onejoke;
+package com.github.luchici.onejoke.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
