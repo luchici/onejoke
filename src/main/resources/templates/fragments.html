@@ -1,0 +1,11 @@
+<li th:fragment="navbar-button(text,link)" class="navbar-element">
+  <a th:href="${link}">
+    <button th:text="${text}" class="navbar-button button"></button>
+  </a>
+</li>
+
+<li th:fragment="footer-social-link(svg,link)" class="footer-social-li">
+  <a th:href="${link}" target="_blank" class="footer-social-link">
+    <svg th:replace="~{${svg}}" class="footer-social-svg"></svg>
+  </a>
+</li>

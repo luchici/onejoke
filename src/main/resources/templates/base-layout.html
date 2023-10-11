@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">OneJoke</title>
+  <link rel="stylesheet" th:href="@{/css/base-layout.css}">
+  <link rel="stylesheet" th:href="@{/css/fragments.css}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+  <ul class="navbar-list-container">
+    <li th:replace="~{fragments::navbar-button(text='Home', link='/home')}"></li>
+    <li class="navbar-text-container">
+      <p class="navbar-text">
+        A day without laughter is a day wasted
+      </p>
+    </li>
+    <li th:replace="~{fragments::navbar-button(text='Profile', link='/profile')}"></li>
+  </ul>
+</nav>
+
+<section layout:fragment="content"></section>
+
+<footer class="footer">
+  <p class="footer-text">Made by Bogdan Luchici</p>
+  <ul class="footer-list-container">
+    <li th:replace="~{fragments::footer-social-link(svg='github',link='https://github.com/luchici/onejoke')}"></li>
+    <li th:replace="~{fragments::footer-social-link(svg='whatsapp',link='wa.link/kb7561')}"></li>
+    <li th:replace="~{fragments::footer-social-link(svg='linkedin',link='https://www.linkedin.com/in/luchici/')}"></li>
+    <li th:replace="~{fragments::footer-social-link(svg='email',link='mailto:luchici123@gmail.com')}"></li>
+  </ul>
+</footer>
+</body>
+</html>

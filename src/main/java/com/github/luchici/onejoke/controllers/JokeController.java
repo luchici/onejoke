@@ -14,7 +14,7 @@ public class JokeController {
 
     private final JokeService jokeService;
 
-    @GetMapping
+    @GetMapping({"/", "/home"})
     public String getHome(Model model) {
         String username = "Brad Pitt";
         String joke = jokeService.getJoke();
