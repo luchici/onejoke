@@ -1,9 +1,9 @@
 package com.github.luchici.onejoke.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.validation.Valid;
+import com.github.luchici.onejoke.validation.RepeatedPassword;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -15,10 +15,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 @NoArgsConstructor
-
+@RepeatedPassword
 public class UserUpdate {
 
-    //  TODO:  Annotation to check password is similar with repeatedPassword
     //  TODO:  Internationalization
 
     @NotBlank
@@ -31,12 +30,14 @@ public class UserUpdate {
     private String lastName;
     @NotBlank
     @Size(min = 3,max = 12)
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "need to contain just letters")
     private String username;
     @Past
-    // @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dob;
     @Email
+    @NotBlank
     private String email;
     @NotBlank
     @Size(min = 6,max = 20)
