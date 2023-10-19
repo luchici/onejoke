@@ -1,4 +1,4 @@
-<form class="form-signup" th:fragment="form-signup(action_link)" th:object="${userUpdate}" th:action="@{${action_link}}" method="post">
+<form class="form-signup" th:fragment="form-signup(action_link)" th:object="${userUpdateFormData}" th:action="@{${action_link}}" method="post">
 <!--  Update Status -->
   <p th:if="${successful_update!=null}" th:text="${successful_update}" class="success-msg"></p>
   <p th:if="${unsuccessful_update!=null}" th:text="${unsuccessful_update}" class="try-again-msg"></p>
@@ -40,7 +40,7 @@
   <button type="submit" class="button submit-button" id="content-form-button" th:text="${text}"></button>
 </a>
 
-<a th:fragment="auth-button(text,link)" th:href="${link}" class="auth-button-container">
+<a th:fragment="auth-button(text,link)" th:href="${link}" class="auth-button">
   <button type="submit" class="button" th:text="${text}"></button>
 </a>
 
