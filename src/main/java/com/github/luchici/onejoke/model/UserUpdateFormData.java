@@ -18,19 +18,17 @@ import org.springframework.format.annotation.DateTimeFormat;
 @RepeatedPassword
 public class UserUpdateFormData {
 
-    //  TODO:  Internationalization
-
     @NotBlank
     @Size(min = 3, max = 12)
-    @Pattern(regexp = "^[A-Za-z]+$", message = "need to contain just letters")
+    @Pattern(regexp = "^[A-Za-z]+$", message = "{validation.pattern.just-letters}")
     private String firstName;
     @NotBlank
     @Size(min = 3,max = 12)
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "need to contain just letters")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{validation.pattern.just-letters}")
     private String lastName;
     @NotBlank
     @Size(min = 3,max = 12)
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "need to contain just letters")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{validation.pattern.just-letters}")
     private String username;
     @Past
     @NotNull
@@ -41,11 +39,11 @@ public class UserUpdateFormData {
     private String email;
     @NotBlank
     @Size(min = 6,max = 20)
-    @Pattern(regexp = "^.*?\\d+.*?$", message = "need to contain one or more digits")
-    @Pattern(regexp = "(?=.*[A-Z]).*", message = "need to contain one or more capital letters")
-    @Pattern(regexp = "(?=.*[a-z]).*", message = "need to contain one or more lowercase letters")
-    @Pattern(regexp = "^.*[@#$%^&*()!~]+$", message = "need to contain one or more symbols")
-    @Pattern(regexp = "^\\S+$", message = "can`t contain any white spaces")
+    @Pattern(regexp = "^.*?\\d+.*?$", message = "{validation.pattern.just-digits}")
+    @Pattern(regexp = "(?=.*[A-Z]).*", message = "{validation.pattern.must-capital-letters}")
+    @Pattern(regexp = "(?=.*[a-z]).*", message = "{validation.pattern.must-lowercase-letters}")
+    @Pattern(regexp = "^.*[@#$%^&*()!~]+$", message = "{validation.pattern.must-symbols}")
+    @Pattern(regexp = "^\\S+$", message = "{validation.pattern.no-whitespace}")
     private String password;
 
     private String repeatedPassword;
