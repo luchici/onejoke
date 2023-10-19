@@ -3,14 +3,14 @@
   <p th:if="${successful_update!=null}" th:text="${successful_update}" class="success-msg"></p>
   <p th:if="${unsuccessful_update!=null}" th:text="${unsuccessful_update}" class="try-again-msg"></p>
 <!--  Form Body -->
-  <div th:replace="~{auth-fragments :: form_field(form_field_name='firstName',form_field_type='text',form_field_label_text='First Name')}"></div>
-  <div th:replace="~{auth-fragments :: form_field(form_field_name='lastName',form_field_type='text',form_field_label_text='Last Name')}"></div>
-  <div th:replace="~{auth-fragments :: form_field(form_field_name='username',form_field_type='text',form_field_label_text='Username')}"></div>
-  <div th:replace="~{auth-fragments :: form_field(form_field_name='dob',form_field_type='date',form_field_label_text='DOB')}"></div>
-  <div th:replace="~{auth-fragments :: form_field(form_field_name='email',form_field_type='text',form_field_label_text='Email')}"></div>
-  <div th:replace="~{auth-fragments :: form_field(form_field_name='password',form_field_type='password',form_field_label_text='Password')}"></div>
-  <div th:replace="~{auth-fragments :: form_field(form_field_name='repeatedPassword',form_field_type='password',form_field_label_text='Repeated Password')}"></div>
-  <a th:replace="~{auth-fragments :: button-submit(text='Update')}"></a>
+  <div th:replace="~{auth-fragments :: form_field(form_field_name='firstName',form_field_type='text',form_field_label_text=#{profile.update.form.firstname})}"></div>
+  <div th:replace="~{auth-fragments :: form_field(form_field_name='lastName',form_field_type='text',form_field_label_text=#{profile.update.form.lastname})}"></div>
+  <div th:replace="~{auth-fragments :: form_field(form_field_name='username',form_field_type='text',form_field_label_text=#{profile.update.form.username})}"></div>
+  <div th:replace="~{auth-fragments :: form_field(form_field_name='dob',form_field_type='date',form_field_label_text=#{profile.update.form.dob})}"></div>
+  <div th:replace="~{auth-fragments :: form_field(form_field_name='email',form_field_type='text',form_field_label_text=#{profile.update.form.email})}"></div>
+  <div th:replace="~{auth-fragments :: form_field(form_field_name='password',form_field_type='password',form_field_label_text=#{profile.update.form.password})}"></div>
+  <div th:replace="~{auth-fragments :: form_field(form_field_name='repeatedPassword',form_field_type='password',form_field_label_text=#{profile.update.form.repeated-password})}"></div>
+  <a th:replace="~{auth-fragments :: button-submit(text=#{profile.update.form.button})}"></a>
 </form>
 
 <!--Form Field fragments-->

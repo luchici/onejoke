@@ -16,9 +16,7 @@
   <ul class="navbar-list-container">
     <li th:replace="~{fragments::navbar-button(text='Home', link='/home')}"></li>
     <li class="navbar-text-container">
-      <p class="navbar-text">
-        A day without laughter is a day wasted
-      </p>
+      <p class="navbar-text" th:text="#{base-layout.motto}"></p>
     </li>
     <li th:replace="~{fragments::navbar-button(text='Profile', link='/profile')}"></li>
   </ul>

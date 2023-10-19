@@ -11,7 +11,7 @@
 <body>
 <section layout:fragment="content" class="content">
 
-  <p class="content-no-joke" th:if="${username == null}">Log in to get a joke!</p>
+  <p class="content-no-joke" th:if="${username == null}" th:text="#{home.not.logged}"></p>
   <div th:replace="~{auth-fragments::auth-button-container}"></div>
   <div class="content-text-joke" th:if="${username != null}">
     <p class="content-welcome-msg">Here is a joke to make your day better:</p>
