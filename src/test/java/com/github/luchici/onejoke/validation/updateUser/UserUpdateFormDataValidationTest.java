@@ -3,7 +3,7 @@ package com.github.luchici.onejoke.validation.updateUser;
 import static com.github.luchici.onejoke.validation.updateUser.UserUpdateValidationUtility.validUserUpdate;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.github.luchici.onejoke.model.UserUpdate;
+import com.github.luchici.onejoke.model.UserUpdateFormData;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class UserUpdateValidationTest {
+public class UserUpdateFormDataValidationTest {
 
     private static ValidatorFactory validatorFactory;
     private static Validator validator;
@@ -34,9 +34,9 @@ public class UserUpdateValidationTest {
 
     @ParameterizedTest
     @MethodSource("com.github.luchici.onejoke.validation.updateUser.UserUpdateValidationUtility#provideUsersWithInvalidFirstname")
-    void userUpdate_ValidationThrowException_WithInvalidFirstname(UserUpdate userUpdate) {
+    void userUpdate_ValidationThrowException_WithInvalidFirstname(UserUpdateFormData userUpdateFormData) {
         Set<String> expectedValue = Set.of("firstName");
-        Set<ConstraintViolation<UserUpdate>> violations = validator.validate(userUpdate);
+        Set<ConstraintViolation<UserUpdateFormData>> violations = validator.validate(userUpdateFormData);
         Set<String> actualValue = violations.stream().map(v -> v.getPropertyPath().toString()).collect(Collectors.toSet());
         assertThat(actualValue)
             .hasSize(1)
@@ -45,9 +45,9 @@ public class UserUpdateValidationTest {
 
     @ParameterizedTest
     @MethodSource("com.github.luchici.onejoke.validation.updateUser.UserUpdateValidationUtility#provideUsersWithInvalidLastname")
-    void userUpdate_ValidationThrowException_WithInvalidLastname(UserUpdate userUpdate) {
+    void userUpdate_ValidationThrowException_WithInvalidLastname(UserUpdateFormData userUpdateFormData) {
         Set<String> expectedValue = Set.of("lastName");
-        Set<ConstraintViolation<UserUpdate>> violations = validator.validate(userUpdate);
+        Set<ConstraintViolation<UserUpdateFormData>> violations = validator.validate(userUpdateFormData);
         Set<String> actualValue = violations.stream().map(v -> v.getPropertyPath().toString()).collect(Collectors.toSet());
         assertThat(actualValue)
             .hasSize(1)
@@ -56,9 +56,9 @@ public class UserUpdateValidationTest {
 
     @ParameterizedTest
     @MethodSource("com.github.luchici.onejoke.validation.updateUser.UserUpdateValidationUtility#provideUsersWithInvalidUsername")
-    void userUpdate_ValidationThrowException_WithInvalidUsername(UserUpdate userUpdate) {
+    void userUpdate_ValidationThrowException_WithInvalidUsername(UserUpdateFormData userUpdateFormData) {
         Set<String> expectedValue = Set.of("username");
-        Set<ConstraintViolation<UserUpdate>> violations = validator.validate(userUpdate);
+        Set<ConstraintViolation<UserUpdateFormData>> violations = validator.validate(userUpdateFormData);
         Set<String> actualValue = violations.stream().map(v -> v.getPropertyPath().toString()).collect(Collectors.toSet());
         assertThat(actualValue)
             .hasSize(1)
@@ -67,9 +67,9 @@ public class UserUpdateValidationTest {
 
     @ParameterizedTest
     @MethodSource("com.github.luchici.onejoke.validation.updateUser.UserUpdateValidationUtility#provideUsersWithInvalidLocalDate")
-    void userUpdate_ValidationThrowException_WithInvalidLocalDate(UserUpdate userUpdate) {
+    void userUpdate_ValidationThrowException_WithInvalidLocalDate(UserUpdateFormData userUpdateFormData) {
         Set<String> expectedValue = Set.of("dob");
-        Set<ConstraintViolation<UserUpdate>> violations = validator.validate(userUpdate);
+        Set<ConstraintViolation<UserUpdateFormData>> violations = validator.validate(userUpdateFormData);
         Set<String> actualValue = violations.stream().map(v -> v.getPropertyPath().toString()).collect(Collectors.toSet());
         assertThat(actualValue)
             .hasSize(1)
@@ -78,9 +78,9 @@ public class UserUpdateValidationTest {
 
     @ParameterizedTest
     @MethodSource("com.github.luchici.onejoke.validation.updateUser.UserUpdateValidationUtility#provideUsersWithInvalidEmail")
-    void userUpdate_ValidationThrowException_WithInvalidEmail(UserUpdate userUpdate) {
+    void userUpdate_ValidationThrowException_WithInvalidEmail(UserUpdateFormData userUpdateFormData) {
         Set<String> expectedValue = Set.of("email");
-        Set<ConstraintViolation<UserUpdate>> violations = validator.validate(userUpdate);
+        Set<ConstraintViolation<UserUpdateFormData>> violations = validator.validate(userUpdateFormData);
         Set<String> actualValue = violations.stream().map(v -> v.getPropertyPath().toString()).collect(Collectors.toSet());
         assertThat(actualValue)
             .hasSize(1)
@@ -89,9 +89,9 @@ public class UserUpdateValidationTest {
 
     @ParameterizedTest
     @MethodSource("com.github.luchici.onejoke.validation.updateUser.UserUpdateValidationUtility#provideUsersWithInvalidPassword")
-    void userUpdate_ValidationThrowException_WithInvalidPassword(UserUpdate userUpdate) {
+    void userUpdate_ValidationThrowException_WithInvalidPassword(UserUpdateFormData userUpdateFormData) {
         Set<String> expectedValue = Set.of("password");
-        Set<ConstraintViolation<UserUpdate>> violations = validator.validate(userUpdate);
+        Set<ConstraintViolation<UserUpdateFormData>> violations = validator.validate(userUpdateFormData);
 
         Set<String> actualValue = violations.stream().map(v -> v.getPropertyPath().toString()).collect(Collectors.toSet());
 
@@ -102,8 +102,8 @@ public class UserUpdateValidationTest {
 
     @Test
     void userUpdate_ValidationThrowException_WithInvalidRepeatedPassword() {
-        UserUpdate userUpdate = validUserUpdate().repeatedPassword("notSamePass").build();
-        Set<ConstraintViolation<UserUpdate>> violations = validator.validate(userUpdate);
+        UserUpdateFormData userUpdateFormData = validUserUpdate().repeatedPassword("notSamePass").build();
+        Set<ConstraintViolation<UserUpdateFormData>> violations = validator.validate(userUpdateFormData);
         assertThat(violations)
             .hasSize(1);
     }

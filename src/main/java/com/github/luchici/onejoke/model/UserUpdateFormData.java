@@ -16,7 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Data
 @NoArgsConstructor
 @RepeatedPassword
-public class UserUpdate {
+public class UserUpdateFormData {
 
     //  TODO:  Internationalization
 
@@ -51,7 +51,7 @@ public class UserUpdate {
     private String repeatedPassword;
 
     @Builder
-    public UserUpdate(String firstName, String lastName, String username, LocalDate dob, String email, String password, String repeatedPassword) {
+    public UserUpdateFormData(String firstName, String lastName, String username, LocalDate dob, String email, String password, String repeatedPassword) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;

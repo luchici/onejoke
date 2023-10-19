@@ -1,14 +1,16 @@
 package com.github.luchici.onejoke.validation.updateUser;
 
-import com.github.luchici.onejoke.model.UserUpdate;
+import com.github.luchici.onejoke.model.UserUpdateFormData;
+import com.github.luchici.onejoke.model.UserUpdateFormData.UserUpdateFormDataBuilder;
 import java.time.LocalDate;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
 public class UserUpdateValidationUtility {
+    private static UserUpdateFormData.UserUpdateFormDataBuilder defaultUserUpdate;
 
     public static Stream<Arguments> provideUsersWithInvalidFirstname() {
-        UserUpdate.UserUpdateBuilder defaultUserUpdate = validUserUpdate();
+        defaultUserUpdate = validUserUpdate();
         return Stream.of(
             Arguments.of(defaultUserUpdate.firstName("    ").build()),                        // blank
             Arguments.of(defaultUserUpdate.firstName(null).build()),                          // null
@@ -25,7 +27,7 @@ public class UserUpdateValidationUtility {
     }
 
     public static Stream<Arguments> provideUsersWithInvalidLastname() {
-        UserUpdate.UserUpdateBuilder defaultUserUpdate = validUserUpdate();
+        defaultUserUpdate = validUserUpdate();
         return Stream.of(
             Arguments.of(defaultUserUpdate.lastName("    ").build()),                         // blank
             Arguments.of(defaultUserUpdate.lastName(null).build()),                          // null
@@ -42,7 +44,7 @@ public class UserUpdateValidationUtility {
     }
 
     public static Stream<Arguments> provideUsersWithInvalidUsername() {
-        UserUpdate.UserUpdateBuilder defaultUserUpdate = validUserUpdate();
+        defaultUserUpdate = validUserUpdate();
         return Stream.of(
             Arguments.of(defaultUserUpdate.username("    ").build()),                        // blank
             Arguments.of(defaultUserUpdate.username(null).build()),                          // null
@@ -56,7 +58,7 @@ public class UserUpdateValidationUtility {
     public static Stream<Arguments> provideUsersWithInvalidLocalDate() {
         LocalDate today = LocalDate.now();
         LocalDate futureDate = LocalDate.now().plusDays(7);
-        UserUpdate.UserUpdateBuilder defaultUserUpdate = validUserUpdate();
+        defaultUserUpdate = validUserUpdate();
         return Stream.of(
             Arguments.of(defaultUserUpdate.dob(null).build()),
             Arguments.of(defaultUserUpdate.dob(today).build()),
@@ -64,7 +66,7 @@ public class UserUpdateValidationUtility {
     }
 
     public static Stream<Arguments> provideUsersWithInvalidEmail() {
-        UserUpdate.UserUpdateBuilder defaultUserUpdate = validUserUpdate();
+        defaultUserUpdate = validUserUpdate();
         return Stream.of(
             Arguments.of(defaultUserUpdate.email("    ").build()),                        // blank
             Arguments.of(defaultUserUpdate.email(null).build()),                          // null
@@ -75,7 +77,7 @@ public class UserUpdateValidationUtility {
     }
 
     public static Stream<Arguments> provideUsersWithInvalidPassword() {
-        UserUpdate.UserUpdateBuilder defaultUserUpdate = validUserUpdate();
+        defaultUserUpdate = validUserUpdate();
         return Stream.of(
             Arguments.of(defaultUserUpdate
                             .password("    ")
@@ -123,8 +125,8 @@ public class UserUpdateValidationUtility {
                             .build()));
     }
 
-    public static UserUpdate.UserUpdateBuilder validUserUpdate() {
-        return UserUpdate.builder()
+    public static UserUpdateFormDataBuilder validUserUpdate() {
+        return UserUpdateFormData.builder()
             .firstName("Brad")
             .lastName("Pitt")
             .username("bradPitt")
