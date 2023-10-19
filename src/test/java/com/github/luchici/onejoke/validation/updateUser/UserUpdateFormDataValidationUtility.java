@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
-public class UserUpdateValidationUtility {
+public class UserUpdateFormDataValidationUtility {
     private static UserUpdateFormData.UserUpdateFormDataBuilder defaultUserUpdate;
 
     public static Stream<Arguments> provideUsersWithInvalidFirstname() {

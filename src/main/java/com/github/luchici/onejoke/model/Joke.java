@@ -1,4 +1,4 @@
-package com.github.luchici.onejoke;
+package com.github.luchici.onejoke.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

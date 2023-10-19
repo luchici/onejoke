@@ -2,7 +2,7 @@ package com.github.luchici.onejoke.clients;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.luchici.onejoke.Joke;
+import com.github.luchici.onejoke.model.Joke;
 import feign.Response;
 import feign.codec.Decoder;
 import java.io.BufferedReader;

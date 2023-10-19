@@ -1,5 +1,6 @@
 package com.github.luchici.onejoke.validation;
 
+import com.github.luchici.onejoke.validation.RepeatedPasswordValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import java.lang.annotation.ElementType;

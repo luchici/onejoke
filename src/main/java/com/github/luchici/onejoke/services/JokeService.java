@@ -1,6 +1,6 @@
 package com.github.luchici.onejoke.services;
 
-import com.github.luchici.onejoke.Joke;
+import com.github.luchici.onejoke.model.Joke;
 import com.github.luchici.onejoke.clients.JokeClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;

@@ -1,6 +1,6 @@
 package com.github.luchici.onejoke.controllers;
 
-import static com.github.luchici.onejoke.validation.updateUser.UserUpdateValidationUtility.validUserUpdate;
+import static com.github.luchici.onejoke.validation.updateUser.UserUpdateFormDataValidationUtility.validUserUpdate;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
