@@ -1,10 +1,9 @@
 package com.github.luchici.onejoke.controllers;
 
-import com.github.luchici.onejoke.model.UserUpdate;
+import com.github.luchici.onejoke.model.UserUpdateFormData;
 import com.github.luchici.onejoke.services.JokeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,12 +28,14 @@ public class JokeController {
     }
 
     @GetMapping("/profile")
-    public String getProfilePage() {
+    public String getProfile(Model model) {
+        UserUpdateFormData userUpdateFormData = new UserUpdateFormData();
+        model.addAttribute(userUpdateFormData);
         return "profile";
     }
 
     @PostMapping("/profile")
-    public String updateUserSubmit(@Valid @ModelAttribute UserUpdate userUpdate, BindingResult bindingResult, Model model) {
+    public String updateUserSubmit(@Valid @ModelAttribute UserUpdateFormData userUpdateFormData, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("unsuccessful_update", "Try again!");
         } else {
@@ -42,4 +43,5 @@ public class JokeController {
         }
         return "profile";
     }
+
 }
