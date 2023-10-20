@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base-layout.html}">
+<head>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/error.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/auth-fragments.css}">
+  <title>Home</title>
+</head>
+<body>
+<section layout:fragment="content" class="content">
+  <div class="error-container">
+    <p th:text="#{error.header}"></p>
+    <p>Status: <span th:text="${status}"/></p>
+    <p>Error: <span th:text="${error}"/></p>
+    <p>Message: <span th:text="${messages}"/></p>
+    <p th:text="#{error.action}"></p>
+  </div>
+
+</section>
+</body>
+</html>
